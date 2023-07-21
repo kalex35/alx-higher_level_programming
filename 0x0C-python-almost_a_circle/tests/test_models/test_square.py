@@ -12,16 +12,8 @@ from models.square import Square
 class TestSquare(unittest.TestCase):
     """Test class for Square class."""
 
-    
-
-
-
     def setUp(self):
         Base._Base__nb_objects = 0
-
-    
-
-
 
     def test_10_0(self):
         """Test Square class: check for attributes."""
@@ -35,19 +27,11 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s1.y, 4)
         self.assertEqual(s1.id, 2)
 
-    
-
-
-
     def test_10_1(self):
         """Test __str__ representation."""
 
         s1 = Square(9, 4, 5, 6)
         self.assertEqual(str(s1), "[Square] (6) 4/5 - 9")
-
-    
-
-
 
     def test_10_2(self):
         """Test Square class: check for inheritance."""
@@ -60,10 +44,6 @@ class TestSquare(unittest.TestCase):
         self.assertTrue(issubclass(Square, Base))
         self.assertFalse(isinstance(Square, Base))
 
-    
-
-
-
     def test_10_3(self):
         """Test Square class: check for missing args."""
 
@@ -72,10 +52,6 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(
             "__init__() missing 1 required positional argument: 'size'", str(
                 x.exception))
-
-    
-
-
 
     def test_10_4(self):
         """Test Square for methods inherited from Rectangle."""
@@ -93,10 +69,6 @@ class TestSquare(unittest.TestCase):
         res = "####\n####\n####\n####\n"
         self.assertEqual(s, res)
 
-    
-
-
-
     def test_11_0(self):
         """Test Square class: check for size attribute."""
 
@@ -104,10 +76,6 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s1.size, 8)
         s2 = Square(9, 8, 7, 2)
         self.assertEqual(s2.size, 9)
-
-    
-
-
 
     def test_11_1(self):
         """Test Square class: check for wrong attributes."""
@@ -134,10 +102,6 @@ class TestSquare(unittest.TestCase):
             s = Square(2, 5, -5, 6)
         self.assertEqual("y must be >= 0", str(x.exception))
 
-    
-
-
-
     def test_12_0(self):
         """Test update method on Square."""
 
@@ -155,10 +119,6 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s1.id, 89)
         self.assertEqual(s1.y, 1)
 
-    
-
-
-
     def test_12_1(self):
         """Test for update method on Square with wrong types."""
 
@@ -169,10 +129,6 @@ class TestSquare(unittest.TestCase):
         with self.assertRaises(TypeError) as x:
             s1.update("hello", 8, 9)
         self.assertEqual("id must be an integer", str(x.exception))
-
-    
-
-
 
     def test_14_0(self):
         """Test for public method to_dictionary."""
@@ -188,10 +144,6 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(len(s1_dictionary), len(s2_dictionary))
         self.assertEqual(type(s2_dictionary), dict)
         self.assertFalse(s1 == s2)
-
-    
-
-
 
     def test_14_1(self):
         """Test for public method to_dictionary with wrong args."""

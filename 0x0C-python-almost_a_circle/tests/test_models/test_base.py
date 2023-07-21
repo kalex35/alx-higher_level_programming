@@ -230,11 +230,6 @@ class TestBase(unittest.TestCase):
             Rectangle.from_json_string("Hi", 98)
         self.assertEqual(s2, str(x.exception))
 
-    
-
-
-
-
     def test_18_0(self):
         """Test class method create with normal types."""
 
@@ -251,11 +246,6 @@ class TestBase(unittest.TestCase):
         self.assertFalse(s1 is s2)
         self.assertFalse(s1 == s2)
 
-    
-
-
-
-
     def test_18_1(self):
         """Test class method create with wrong types."""
 
@@ -265,11 +255,6 @@ class TestBase(unittest.TestCase):
         self.assertEqual(
             "create() takes 1 positional argument but 2 were given", str(
                 x.exception))
-
-    
-
-
-
 
     def test_19_0(self):
         """Test class method load_from_file with normal types."""
@@ -290,11 +275,6 @@ class TestBase(unittest.TestCase):
         for x in zip(list_squares_input, list_squares_output):
             self.assertEqual(str(x[0]), str(x[1]))
 
-    
-
-
-
-
     def test_19_1(self):
         """Test class method load_from_file with missing files."""
 
@@ -309,11 +289,6 @@ class TestBase(unittest.TestCase):
         list_squares_output = Square.load_from_file()
         self.assertEqual(list_squares_output, [])
 
-    
-
-
-
-
     def test_19_2(self):
         """Test class method load_from_file with wrong args."""
 
@@ -321,11 +296,6 @@ class TestBase(unittest.TestCase):
         with self.assertRaises(TypeError) as x:
             list_rectangles_output = Rectangle.load_from_file("Hello")
         self.assertEqual(s, str(x.exception))
-
-    
-
-
-
 
     def test_20_0(self):
         """Test class method save_to_file_csv with normal types."""
@@ -342,11 +312,6 @@ class TestBase(unittest.TestCase):
         res = "id,size,x,y\n12,9,3,1\n3,6,7,0\n"
         with open("Square.csv", "r") as f:
             self.assertEqual(len(f.read()), len(res))
-
-    
-
-
-
 
     def test_20_1(self):
         """Test class method save_to_file_csv with errors."""
@@ -367,12 +332,7 @@ class TestBase(unittest.TestCase):
             "list_objs must be a list of instances", str(
                 x.exception))
 
-    
-
-
-
-
-            def test_20_2(self):
+    def test_20_2(self):
         """Test class method save_to_file_csv with wrong args."""
 
         s1 = ("save_to_file_csv() missing 1 required" +
@@ -384,11 +344,6 @@ class TestBase(unittest.TestCase):
         with self.assertRaises(TypeError) as x:
             Rectangle.save_to_file_csv([Rectangle(9, 4), Rectangle(8, 9)], 98)
         self.assertEqual(s2, str(x.exception))
-
-    
-
-
-
 
     def test_20_3(self):
         """Test class method load_from_file_csv with normal types."""
@@ -409,11 +364,6 @@ class TestBase(unittest.TestCase):
         for x in zip(list_squares_input, list_squares_output):
             self.assertEqual(str(x[0]), str(x[1]))
 
-    
-
-
-
-
     def test_20_4(self):
         """Test class method load_from_file_csv with missing files."""
 
@@ -424,11 +374,6 @@ class TestBase(unittest.TestCase):
         self.assertEqual(list_rectangles_output, [])
         list_squares_output = Square.load_from_file_csv()
         self.assertEqual(list_squares_output, [])
-
-    
-
-
-
 
     def test_20_5(self):
         """Test class method load_from_file_csv with wrong args."""
