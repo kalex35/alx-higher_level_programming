@@ -36,11 +36,6 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """Setting the height of the rectangle"""
-        
-
-
-
-
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -56,11 +51,6 @@ class Rectangle(Base):
     def x(self, value):
         """Setting the x coordinate of the rectangle"""
         if type(value) is not int:
-        
-
-
-
-
             raise TypeError("x must be an integer")
         if value < 0:
             raise ValueError("x must be >= 0")
@@ -76,11 +66,6 @@ class Rectangle(Base):
         """Setting the y coordinate of the rectangle"""
         if type(value) is not int:
             raise TypeError("y must be an integer")
-        
-
-
-
-
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
@@ -91,11 +76,6 @@ class Rectangle(Base):
 
     def display(self):
         """Printing the rectangle in stdout"""
-        
-
-
-
-
         for i in range(self.y):
             print()
         for i in range(self.height):
@@ -108,11 +88,6 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """Updating the rectangle"""
-        
-
-
-
-
         if args:
             for i in range(len(args)):
                 if i == 0:
@@ -127,11 +102,6 @@ class Rectangle(Base):
                     self.x = args[i]
                 elif i == 4:
                     self.y = args[i]
-        
-
-
-
-
         else:
             for key, value in kwargs.items():
                 if key == "id":
@@ -146,11 +116,6 @@ class Rectangle(Base):
                     self.x = value
                 elif key == "y":
                     self.y = value
-
-    
-
-
-
 
     def to_dictionary(self):
         """Returning the dictionary representation of the rectangle"""
