@@ -10,10 +10,6 @@ class Base:
     """Defining class Base"""
     __nb_objects = 0
 
-    
-
-
-
     def __init__(self, id=None):
         """Initializing class Base"""
         if id is None:
@@ -23,10 +19,6 @@ class Base:
             self.id = id
 
     @staticmethod
-    
-
-
-
     def to_json_string(list_dictionaries):
         """Returning json string representation of list of dictionaries"""
         if list_dictionaries is None or list_dictionaries == []:
@@ -37,10 +29,6 @@ class Base:
         return json.dumps(list_dictionaries)
 
     @classmethod
-    
-
-
-
     def save_to_file(cls, list_objs):
         """Saving list of objects to file"""
         if (type(list_objs) != list and
@@ -61,11 +49,6 @@ class Base:
                 writer.writerows(list_objs)
 
     @staticmethod
-    
-
-
-
-
     def from_json_string(json_string):
         """Returning list of objects from json string"""
         if json_string is None or len(json_string) == 0:
@@ -73,10 +56,6 @@ class Base:
         return json.loads(json_string)
 
     @classmethod
-    
-
-
-
     def create(cls, **dictionary):
         """Creating an instance of class Base"""
         if cls.__name__ == 'Rectangle':
@@ -87,10 +66,6 @@ class Base:
         return new_instance
 
     @classmethod
-    
-
-
-
     def load_from_file(cls):
         """Loading list of objects from file"""
         filename = cls.__name__ + ".json"
@@ -105,10 +80,6 @@ class Base:
         return m
 
     @classmethod
-    
-
-
-
     def save_to_file(cls, list_objs):
         """Writes the JSON string representation of list_objs to a file."""
         if list_objs is None or list_objs == []:
@@ -120,10 +91,6 @@ class Base:
             f.write(jstr)
 
     @staticmethod
-    
-
-
-
     def from_json_string(json_string):
         """Returns the list of the JSON string representation json_string."""
         new_len = []
@@ -134,10 +101,6 @@ class Base:
         return new_len
 
     @classmethod
-    
-
-
-
     def create(cls, **dictionary):
         """Returns an instance with all attributes already set."""
         if cls.__name__ == 'Rectangle':
@@ -148,10 +111,6 @@ class Base:
         return dummy
 
     @classmethod
-    
-
-
-
     def load_from_file(cls):
         """Returns a list of instances."""
 
@@ -167,10 +126,6 @@ class Base:
         return new_loader
 
     @classmethod
-    
-
-
-
     def save_to_file_csv(cls, list_objs):
         """Serializes list_objs in CSV format and saves it to a file."""
 
@@ -192,10 +147,6 @@ class Base:
                 writer.writerows(list_objs)
 
     @classmethod
-    
-
-
-
     def load_from_file_csv(cls):
         """A method that serializes and deserializes a list of instances."""
 
@@ -218,10 +169,6 @@ class Base:
         return new_load
 
     @staticmethod
-    
-
-
-
     def draw(list_rectangles, list_squares):
         """A static method that opens a window and draws all the instances"""
 
@@ -245,10 +192,6 @@ class Base:
         time.sleep(5)
 
     @staticmethod
-    
-
-
-
     def draw_rect(t, rect):
         """Helper method that draws a Rectangle
         or Square.

@@ -110,11 +110,6 @@ class TestRectangle(unittest.TestCase):
         r3 = Rectangle(8, 7, 0, 0, 12)
         self.assertEqual(r3.area(), 56)
 
-    
-
-
-
-
     def test_4_1(self):
         """Test for public method area with wrong args."""
 
@@ -124,11 +119,6 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(
             "area() takes 1 positional argument but 2 were given", str(
                 x.exception))
-
-    
-
-
-
 
     def test_5_0(self):
         """Test for public method display."""
@@ -141,11 +131,6 @@ class TestRectangle(unittest.TestCase):
         res = "####\n####\n####\n####\n####\n"
         self.assertEqual(s, res)
 
-    
-
-
-
-
     def test_5_1(self):
         """Test for public method display with wrong args."""
 
@@ -155,11 +140,6 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(
             "display() takes 1 positional argument but 2 were given", str(
                 x.exception))
-
-    
-
-
-
 
     def test_6_0(self):
         """Test for __str__ representation."""
@@ -172,11 +152,6 @@ class TestRectangle(unittest.TestCase):
         res = "[Rectangle] (12) 2/1 - 4/6\n"
         self.assertEqual(s, res)
 
-    
-
-
-
-
     def test_7_0(self):
         """Test for public method display with x and y."""
 
@@ -187,11 +162,6 @@ class TestRectangle(unittest.TestCase):
         s = f.getvalue()
         res = "\n\n  ##\n  ##\n  ##\n"
         self.assertEqual(s, res)
-
-    
-
-
-
 
     def test_8_0(self):
         """Test for public method update."""
@@ -210,11 +180,6 @@ class TestRectangle(unittest.TestCase):
         r1.update()
         self.assertEqual(str(r1), "[Rectangle] (89) 4/5 - 2/3")
 
-    
-
-
-
-
     def test_8_1(self):
         """Test for public method update with wrong types."""
 
@@ -225,11 +190,6 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError) as x:
             r1.update(65, 89, "hi")
         self.assertEqual("height must be an integer", str(x.exception))
-
-    
-
-
-
 
     def test_9_0(self):
         """Test for public method update with kwargs."""
@@ -243,11 +203,6 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1.x, 1)
         self.assertEqual(r1.height, 2)
 
-    
-
-
-
-
     def test_9_1(self):
         """Test for public method update with wrong types in kwargs."""
 
@@ -258,11 +213,6 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError) as x:
             r1.update(height=65, x=2, width="hi")
         self.assertEqual("width must be an integer", str(x.exception))
-
-    
-
-
-
 
     def test_13_0(self):
         """Test for public method to_dictionary."""
@@ -278,11 +228,6 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(len(r1_dictionary), len(r2_dictionary))
         self.assertEqual(type(r2_dictionary), dict)
         self.assertFalse(r1 == r2)
-
-    
-
-
-
 
     def test_13_1(self):
         """Test for public method to_dictionary with wrong args."""
